@@ -15,13 +15,13 @@ const CSS = `
     --shadow: 0 1px 2px rgba(0,0,0,.05), 0 18px 50px rgba(0,0,0,.10);
   }
   #cv[data-theme="dark"] {
-    --bg: #0b0b0c; --sheet: #161617; --ink: #ededed; --sec: #a8a8a8;
+    --bg: #0b0b0c; --sheet: #161617; --ink: #d6d6d6; --sec: #a8a8a8;
     --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
     --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
   }
   @media (prefers-color-scheme: dark) {
     #cv:not([data-theme]) {
-      --bg: #0b0b0c; --sheet: #161617; --ink: #ededed; --sec: #a8a8a8;
+      --bg: #0b0b0c; --sheet: #161617; --ink: #d6d6d6; --sec: #a8a8a8;
       --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
       --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
     }
@@ -133,8 +133,8 @@ function contactRow(m) {
   if (m.location) parts.push(`<span style="color:var(--faint);">${esc(m.location)}</span>`);
   if (m.email) parts.push(`<a href="${esc(m.emailHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.email)}</a>`);
   if (m.phone) parts.push(`<a href="${esc(m.telHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.phone)}</a>`);
-  if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}</a>`);
-  if (m.linkedinDisplay) parts.push(`<a href="${esc(m.linkedinUrl)}" style="color:var(--sec); text-decoration:none;">${esc(m.linkedinDisplay)}</a>`);
+  if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}</a>`);
+  if (m.linkedinDisplay) parts.push(`<a href="${esc(m.linkedinUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.linkedinDisplay)}</a>`);
   return parts.join('\n        <span style="color:var(--rule);">·</span>\n        ');
 }
 
@@ -235,7 +235,7 @@ function render(resume) {
 <div id="cv" style="min-height:100vh; background:var(--bg); font-family:'IBM Plex Sans',system-ui,sans-serif; color:var(--ink); padding:44px 20px; -webkit-font-smoothing:antialiased;">
 
   <div class="cv-noprint" style="position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px;">
-    <a href="./resume.pdf" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
+    <a href="./resume.pdf" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
     <button id="cv-print" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">print</button>
     <button id="cv-theme-toggle" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">light</button>
   </div>

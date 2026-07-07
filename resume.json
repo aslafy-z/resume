@@ -6,7 +6,7 @@
     "email": "hello@zadkiel.fr",
     "phone": "+33 6 04 15 27 98",
     "url": "https://zadkiel.fr",
-    "summary": "Hands-on Kubernetes platform engineer and SRE with 10+ years of experience, focused on self-service platforms, GitOps automation, edge/onboard systems, GPU/AI compute and reliable multi-cloud operations. Led a self-service Kubernetes platform product at CCL and internal platform modernization at Carrefour; OSS maintainer in the Kubernetes/Helm ecosystem, exploring agentic coding and AI-assisted platform workflows.",
+    "summary": "Hands-on Kubernetes platform engineer and SRE with **10+ years of experience**, focused on self-service platforms, GitOps automation, edge/onboard systems, GPU/AI compute and reliable multi-cloud operations. Led a self-service Kubernetes platform product at CCL and internal platform modernization at Carrefour; **OSS maintainer** in the Kubernetes/Helm ecosystem, exploring agentic coding and AI-assisted platform workflows.",
     "location": {
       "city": "Toulouse",
       "countryCode": "FR"
@@ -33,8 +33,8 @@
       "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
       "highlights": [
         "Delivered MVPs combining edge computing, content delivery and Kubernetes-based infrastructure.",
-        "Designed Kubernetes foundations for onboard application management, aircraft systems and rollout-constrained environments.",
-        "Built Varnish-based onboard video/content distribution and Jetson/GPU real-time computer-vision pipelines."
+        "Designed **Kubernetes foundations** for onboard application management, aircraft systems and rollout-constrained environments.",
+        "Built Varnish-based onboard video/content distribution and **Jetson/GPU real-time computer-vision pipelines**."
       ]
     },
     {
@@ -44,8 +44,8 @@
       "location": "Toulouse, France",
       "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center.",
       "highlights": [
-        "Led development of a self-service Kubernetes platform product and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
-        "Developed a Kubernetes compliance engine for real-time security and best-practice visibility across developers, compliance teams and operators.",
+        "Led development of a **self-service Kubernetes platform product** and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
+        "Developed a **Kubernetes compliance engine** for real-time security and best-practice visibility across developers, compliance teams and operators.",
         "Delivered client platform maintenance and enhancements using immutable infrastructure, GitOps workflows and modern security practices."
       ]
     },
@@ -58,9 +58,9 @@
       "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
       "highlights": [
         "Operated and modernized multi-cloud Kubernetes platforms used by internal product teams.",
-        "Led RKE to AKS migration with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
+        "Led **RKE to AKS migration** with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
         "Built self-service Kubernetes platform capabilities, resource-efficiency practices, PagerDuty workflows, runbooks and alert tuning.",
-        "Developed and contributed to Kubernetes controllers/operators for multi-tenancy, logging and platform automation."
+        "Developed and contributed to **Kubernetes controllers/operators** for multi-tenancy, logging and platform automation."
       ]
     },
     {
@@ -80,7 +80,7 @@
         "Maintainer",
         "Contributor"
       ],
-      "description": "Maintainer: aslafy-z/helm-git, stakater/application, kube-logging/logging-operator; owner of aslafy-z/ctxdump. Contributor: Argo CD, Talos, Helm, Cilium, Kargo, Scaleway CCM, KServe, Renovate, Prometheus Operator, External Secrets, Pluto…",
+      "description": "Maintainer: **aslafy-z/helm-git, stakater/application, kube-logging/logging-operator**; owner of aslafy-z/ctxdump. Contributor: Argo CD, Talos, Helm, Cilium, Kargo, Scaleway CCM, KServe, Renovate, Prometheus Operator, External Secrets, Pluto…",
       "keywords": [
         "Kubernetes",
         "Helm",

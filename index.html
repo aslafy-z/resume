@@ -24,6 +24,13 @@
     --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
     --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
   }
+  @media (prefers-color-scheme: dark) {
+    #cv:not([data-theme]) {
+      --bg: #0b0b0c; --sheet: #161617; --ink: #ededed; --sec: #a8a8a8;
+      --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
+      --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
+    }
+  }
   @media print {
     @page { size: A4; margin: 0; }
     #cv { --bg:#fff !important; --sheet:#fff !important; --ink:#141414 !important; --sec:#484848 !important;
@@ -36,7 +43,7 @@
 </style>
 </head>
 <body>
-<div id="cv" data-theme="dark" style="min-height:100vh; background:var(--bg); font-family:'IBM Plex Sans',system-ui,sans-serif; color:var(--ink); padding:44px 20px; -webkit-font-smoothing:antialiased;">
+<div id="cv" style="min-height:100vh; background:var(--bg); font-family:'IBM Plex Sans',system-ui,sans-serif; color:var(--ink); padding:44px 20px; -webkit-font-smoothing:antialiased;">
 
   <div class="cv-noprint" style="position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px;">
     <a href="./resume.pdf" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
@@ -247,12 +254,20 @@
   var cv = document.getElementById('cv');
   var btn = document.getElementById('cv-theme-toggle');
   var print = document.getElementById('cv-print');
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function effective() {
+    return cv.getAttribute('data-theme') || (mq && mq.matches ? 'dark' : 'light');
+  }
+  function syncLabel() {
+    btn.textContent = effective() === 'dark' ? 'light' : 'dark';
+  }
   if (cv && btn) {
     btn.addEventListener('click', function () {
-      var next = cv.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      cv.setAttribute('data-theme', next);
-      btn.textContent = next === 'dark' ? 'light' : 'dark';
+      cv.setAttribute('data-theme', effective() === 'dark' ? 'light' : 'dark');
+      syncLabel();
     });
+    if (mq && mq.addEventListener) mq.addEventListener('change', syncLabel);
+    syncLabel();
   }
   if (print) {
     print.addEventListener('click', function () { window.print(); });

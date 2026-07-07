@@ -44,10 +44,6 @@ function ym(s) {
   return ((MONTHS[m - 1] || '') + ' ' + p[0]).trim();
 }
 
-function titleCase(s) {
-  return String(s || '').split(/\s+/).map(w => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w)).join(' ');
-}
-
 function buildModel(resume) {
   const r = resume || {};
   const b = r.basics || {};
@@ -79,7 +75,7 @@ function buildModel(resume) {
   };
 
   return {
-    name: titleCase(b.name),
+    name: b.name || '',
     titleMain: labelParts[0] || '',
     location: [loc.city, COUNTRIES[loc.countryCode] || loc.countryCode].filter(Boolean).join(', '),
     email: b.email || '',

@@ -43,7 +43,6 @@ node -e "const fs=require('fs');const{render}=require('./theme');fs.writeFileSyn
 
 Beyond the standard schema fields, the theme applies a few conventions:
 
-- `basics.name` is title-cased for display.
 - `basics.location.countryCode` is expanded to a country name for common codes.
 - `basics.profiles` entries named `GitHub` and `LinkedIn` appear in the header contact line.
 - `projects` render under "Open Source"; a `name` containing `/` is split into a dimmed

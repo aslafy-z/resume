@@ -57,7 +57,7 @@
       "location": "Toulouse, France",
       "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
       "highlights": [
-        "Operated and modernized multi-cloud Kubernetes platforms used by internal product teams.",
+        "Operated and modernized **10+ multi-cloud Kubernetes clusters** of up to 150 nodes each, serving **50 product teams**.",
         "Led **RKE to AKS migration** with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
         "Built self-service Kubernetes platform capabilities, resource-efficiency practices, PagerDuty workflows, runbooks and alert tuning.",
         "Developed and contributed to **Kubernetes controllers/operators** for multi-tenancy, logging and platform automation."

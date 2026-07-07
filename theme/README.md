@@ -36,7 +36,7 @@ resumed render resume.json --theme jsonresume-theme-typewriter
 For local development from this repository, point node at the theme folder directly:
 
 ```sh
-node -e "const fs=require('fs');const{render}=require('./theme');fs.writeFileSync('resume.html',render(JSON.parse(fs.readFileSync('resume.json','utf8'))))"
+node -e "const fs=require('fs');const{render}=require('./theme');fs.writeFileSync('index.html',render(JSON.parse(fs.readFileSync('resume.json','utf8'))))"
 ```
 
 ## Data mapping

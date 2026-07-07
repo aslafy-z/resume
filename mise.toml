@@ -2,20 +2,20 @@
 node = "26"
 
 [tasks.render]
-description = "Render resume.json to resume.html with the local theme"
+description = "Render resume.json to index.html with the local theme"
 sources = ["resume.json", "theme/index.js", "theme/package.json"]
-outputs = ["resume.html"]
+outputs = ["index.html"]
 run = '''
-node -e 'const fs = require("fs"); const { render } = require("./theme"); fs.writeFileSync("resume.html", render(JSON.parse(fs.readFileSync("resume.json", "utf8"))));'
+node -e 'const fs = require("fs"); const { render } = require("./theme"); fs.writeFileSync("index.html", render(JSON.parse(fs.readFileSync("resume.json", "utf8"))));'
 '''
 
 [tasks.pdf]
 description = "Export resume.pdf from the rendered HTML (light palette, A4)"
 depends = ["render"]
-sources = ["resume.html"]
+sources = ["index.html"]
 outputs = ["resume.pdf"]
 run = '''
-"${CHROME:-google-chrome-stable}" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=10000 --print-to-pdf=resume.pdf resume.html
+"${CHROME:-google-chrome-stable}" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=10000 --print-to-pdf=resume.pdf index.html
 '''
 
 [tasks.serve]
@@ -29,4 +29,4 @@ run = "npx -y resumed validate resume.json"
 
 [tasks.clean]
 description = "Remove generated files"
-run = "rm -f resume.html resume.pdf"
+run = "rm -f index.html resume.pdf"

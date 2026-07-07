@@ -13,21 +13,21 @@
   @keyframes cvblink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
   .cv-cursor { animation: cvblink 1.15s step-end infinite; }
   @media screen { .cv-sheet { zoom: 1.5; } }
-  #cv strong { font-weight: 600; color: var(--ink); }
+  #cv strong { font-weight: 600; color: var(--em); }
   #cv {
     --bg: #e9e9e7; --sheet: #ffffff; --ink: #191919; --sec: #484848;
-    --faint: #7a7a7a; --rule: #d8d8d5; --hair: #ebebe8;
+    --faint: #7a7a7a; --rule: #d8d8d5; --hair: #ebebe8; --em: #191919;
     --shadow: 0 1px 2px rgba(0,0,0,.05), 0 18px 50px rgba(0,0,0,.10);
   }
   #cv[data-theme="dark"] {
     --bg: #0b0b0c; --sheet: #161617; --ink: #ededed; --sec: #a8a8a8;
-    --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425;
+    --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
     --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
   }
   @media print {
     @page { size: A4; margin: 0; }
     #cv { --bg:#fff !important; --sheet:#fff !important; --ink:#141414 !important; --sec:#484848 !important;
-      --faint:#7a7a7a !important; --rule:#ccccca !important; --hair:#e3e3e0 !important; --shadow:none !important;
+      --faint:#7a7a7a !important; --rule:#ccccca !important; --hair:#e3e3e0 !important; --em:#141414 !important; --shadow:none !important;
       padding:0 !important; min-height:0 !important; }
     .cv-sheet { box-shadow:none !important; margin:0 auto !important; }
     .cv-noprint { display:none !important; }

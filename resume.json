@@ -1,0 +1,262 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Zadkiel AHARONIAN",
+    "label": "Kubernetes Platform Engineer / Site Reliability Engineer / OSS Maintainer",
+    "email": "hello@zadkiel.fr",
+    "phone": "+33 6 04 15 27 98",
+    "url": "https://zadkiel.fr",
+    "summary": "Hands-on Kubernetes platform engineer and SRE focused on self-service platforms, GitOps automation, edge/onboard systems, GPU/AI compute and reliable multi-cloud operations. Led a self-service Kubernetes platform product at CCL and internal platform modernization at Carrefour; OSS maintainer in the Kubernetes/Helm ecosystem, exploring agentic coding and AI-assisted platform workflows.",
+    "location": {
+      "city": "Toulouse",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "aslafy-z",
+        "url": "https://github.com/aslafy-z"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "zadkielaharonian",
+        "url": "https://go.zadkiel.fr/linkedin"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Airbus Aircraft",
+      "position": "Cloud Specialist",
+      "startDate": "2024-06",
+      "location": "Toulouse, France",
+      "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
+      "highlights": [
+        "Delivered MVPs combining edge computing, content delivery and Kubernetes-based infrastructure.",
+        "Designed Kubernetes foundations for onboard application management, aircraft systems and rollout-constrained environments.",
+        "Built Varnish-based onboard video/content distribution and Jetson/GPU real-time computer-vision pipelines."
+      ]
+    },
+    {
+      "name": "CCL Consulting",
+      "position": "DevOps Consultant",
+      "startDate": "2019-04",
+      "location": "Toulouse, France",
+      "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center.",
+      "highlights": [
+        "Led development of a self-service Kubernetes platform product and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
+        "Developed a Kubernetes compliance engine for real-time security and best-practice visibility across developers, compliance teams and operators.",
+        "Delivered client platform maintenance and enhancements using immutable infrastructure, GitOps workflows and modern security practices."
+      ]
+    },
+    {
+      "name": "Carrefour",
+      "position": "Site Reliability Engineer",
+      "startDate": "2020-12",
+      "endDate": "2024-05",
+      "location": "Toulouse, France",
+      "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
+      "highlights": [
+        "Operated and modernized multi-cloud Kubernetes platforms used by internal product teams.",
+        "Led RKE to AKS migration with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
+        "Built self-service Kubernetes platform capabilities, resource-efficiency practices, PagerDuty workflows, runbooks and alert tuning.",
+        "Developed and contributed to Kubernetes controllers/operators for multi-tenancy, logging and platform automation."
+      ]
+    },
+    {
+      "name": "Earlier engineering roles",
+      "position": "Software Engineer / Infrastructure Architect",
+      "startDate": "2016-01",
+      "endDate": "2020-12",
+      "location": "Toulouse, France",
+      "summary": "Airbus Group Inc. and Aestetype Design: Python network/security automation, Tufin/NetBox/Centreon/Palo Alto/IPFabric data flows, Jenkins/Vault foundations, and Docker/Kubernetes product modernization."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Selected Cloud Native OSS",
+      "type": "open-source",
+      "roles": [
+        "Maintainer",
+        "Contributor"
+      ],
+      "description": "Maintainer: aslafy-z/helm-git, stakater/application, kube-logging/logging-operator; owner of aslafy-z/ctxdump. Contributor: Argo CD, Talos, Helm, Cilium, Kargo, Scaleway CCM, KServe, Renovate, Prometheus Operator, External Secrets, Pluto…",
+      "keywords": [
+        "Kubernetes",
+        "Helm",
+        "Operators",
+        "GitOps",
+        "Logging",
+        "Networking"
+      ]
+    },
+    {
+      "name": "Production-grade homelab",
+      "type": "infrastructure",
+      "description": "Talos/Kubernetes GitOps lab used to validate real platform patterns: Cilium, KubeSpan, Rook/Ceph, SOPS/age, identity, observability and self-hosted services.",
+      "keywords": [
+        "Talos",
+        "GitOps",
+        "Cilium",
+        "Rook/Ceph",
+        "SOPS/age"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Kent",
+      "area": "Computer Science - Cyber Security",
+      "studyType": "MSc",
+      "startDate": "2016-09",
+      "endDate": "2017-09"
+    },
+    {
+      "institution": "EPITECH",
+      "area": "Computer Programming",
+      "studyType": "Engineering degree",
+      "startDate": "2013-12",
+      "endDate": "2018-12"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "issuer": "The Linux Foundation",
+      "date": "2021-12"
+    },
+    {
+      "name": "Certified Kubernetes Security Specialist (CKS)",
+      "issuer": "The Linux Foundation",
+      "date": "2023-02"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Kubernetes / Platform",
+      "keywords": [
+        "Kubernetes",
+        "Talos",
+        "AKS",
+        "GKE",
+        "EKS",
+        "RKE",
+        "kubeadm",
+        "Cluster API",
+        "Rook/Ceph",
+        "Operators"
+      ]
+    },
+    {
+      "name": "Policy / Networking / Identity",
+      "keywords": [
+        "Cilium",
+        "Calico",
+        "Canal",
+        "OPA",
+        "Kyverno",
+        "Gateway API",
+        "ingress-nginx",
+        "Traefik",
+        "Envoy Gateway",
+        "Keycloak/OIDC"
+      ]
+    },
+    {
+      "name": "GitOps / Delivery",
+      "keywords": [
+        "Helm",
+        "Kustomize",
+        "Argo CD",
+        "Flux CD",
+        "Argo Workflows",
+        "Renovate",
+        "GitLab CI",
+        "GitHub Actions",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "IaC / Cloud / Edge",
+      "keywords": [
+        "Terraform",
+        "Ansible",
+        "Packer",
+        "Vault",
+        "SOPS/age",
+        "AWS",
+        "Azure",
+        "GCP",
+        "Scaleway",
+        "Varnish",
+        "NVIDIA Jetson"
+      ]
+    },
+    {
+      "name": "Observability",
+      "keywords": [
+        "Prometheus",
+        "VictoriaMetrics",
+        "Mimir",
+        "Thanos",
+        "Grafana",
+        "Loki",
+        "Fluent Bit",
+        "Fluentd"
+      ]
+    },
+    {
+      "name": "Programming",
+      "keywords": [
+        "Go",
+        "Python",
+        "TypeScript",
+        "Shell",
+        "Rust",
+        "C",
+        "C++"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "AI / cloud workspaces",
+      "keywords": [
+        "Open-source tooling",
+        "Cloud workspaces",
+        "Agentic coding",
+        "AI workflows",
+        "Developer experience"
+      ]
+    },
+    {
+      "name": "Sports & outdoors",
+      "keywords": [
+        "Hiking",
+        "Rock climbing"
+      ]
+    },
+    {
+      "name": "Food & fermentation",
+      "keywords": [
+        "Hot pepper sauces",
+        "Gourmet pickles",
+        "World cuisines"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "jsonresume-theme-typewriter",
+  "version": "1.0.0",
+  "description": "Paper-sheet JSON Resume theme with light/dark modes, IBM Plex typography, a blinking cursor and A4 print styles",
+  "main": "index.js",
+  "keywords": [
+    "jsonresume",
+    "jsonresume-theme",
+    "resume",
+    "cv",
+    "theme"
+  ],
+  "author": "Zadkiel Aharonian <hello@zadkiel.fr>",
+  "license": "MIT"
+}

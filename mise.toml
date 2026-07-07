@@ -1,7 +1,11 @@
 [tools]
 node = "26"
 
-[tasks.render]
+[tasks.build]
+description = "Build the resume in all formats"
+depends = ["html", "pdf"]
+
+[tasks.html]
 description = "Render resume.json to index.html with the local theme"
 sources = ["resume.json", "theme/index.js", "theme/package.json"]
 outputs = ["index.html"]
@@ -11,7 +15,7 @@ node -e 'const fs = require("fs"); const { render } = require("./theme"); fs.wri
 
 [tasks.pdf]
 description = "Export resume.pdf from the rendered HTML (light palette, A4)"
-depends = ["render"]
+depends = ["html"]
 sources = ["index.html"]
 outputs = ["resume.pdf"]
 run = '''
@@ -20,7 +24,7 @@ run = '''
 
 [tasks.serve]
 description = "Serve the rendered resume on http://localhost:8080"
-depends = ["render"]
+depends = ["html"]
 run = "npx -y http-server -p 8080 -c-1 ."
 
 [tasks.validate]

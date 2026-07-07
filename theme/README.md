@@ -48,3 +48,6 @@ Beyond the standard schema fields, the theme applies a few conventions:
 - `projects` render under "Open Source"; a `name` containing `/` is split into a dimmed
   owner prefix and a highlighted repository name, and `roles` are joined as a label.
 - `work` entries without an `endDate` display as "Present".
+- `**bold**` markers in the summary, work summaries and highlights, and project
+  descriptions render as strong emphasis (weight 600). No other markdown is
+  interpreted; themes without markdown support show the literal asterisks.

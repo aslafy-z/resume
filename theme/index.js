@@ -8,6 +8,7 @@ const CSS = `
   @keyframes cvblink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
   .cv-cursor { animation: cvblink 1.15s step-end infinite; }
   @media screen { .cv-sheet { zoom: 1.5; } }
+  #cv strong { font-weight: 600; }
   #cv {
     --bg: #e9e9e7; --sheet: #ffffff; --ink: #191919; --sec: #484848;
     --faint: #7a7a7a; --rule: #d8d8d5; --hair: #ebebe8;
@@ -35,6 +36,10 @@ function esc(value) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function rich(value) {
+  return esc(value).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
 function ym(s) {
@@ -133,10 +138,10 @@ function experienceSection(jobs) {
               <div style="font-size:12px; line-height:1.3;"><span style="font-weight:600; color:var(--ink);">${esc(job.role)}</span><span style="color:var(--faint);"> · </span><span style="color:var(--sec);">${esc(job.org)}</span></div>
               <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--faint); white-space:nowrap;">${esc(job.period)}</div>
             </div>
-            <div style="font-size:10px; color:var(--faint); margin-top:2px; line-height:1.4;">${esc(job.blurb)}</div>
+            <div style="font-size:10px; color:var(--faint); margin-top:2px; line-height:1.4;">${rich(job.blurb)}</div>
             ${job.bullets.length ? `<ul style="margin:5px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:2px;">
               ${job.bullets.map(b => `<li style="font-size:10px; line-height:1.45; color:var(--sec); display:flex; gap:8px;">
-                <span style="color:var(--faint); flex:none;">–</span><span>${esc(b)}</span>
+                <span style="color:var(--faint); flex:none;">–</span><span>${rich(b)}</span>
               </li>`).join('\n              ')}
             </ul>` : ''}
           </div>`).join('\n          ');
@@ -153,7 +158,7 @@ function projectsSection(projects) {
               <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.3;"><span style="color:var(--faint);">${esc(p.owner)}</span><span style="font-weight:500; color:var(--ink);">${esc(p.repo)}</span></div>
               <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint); white-space:nowrap;">${esc(p.role)}</div>
             </div>
-            <div style="font-size:10px; color:var(--sec); margin-top:3px; line-height:1.45;">${esc(p.description)}</div>
+            <div style="font-size:10px; color:var(--sec); margin-top:3px; line-height:1.45;">${rich(p.description)}</div>
             <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint); margin-top:3px; line-height:1.4; letter-spacing:0.02em;">${esc(p.keywordLine)}</div>
           </div>`).join('\n          ');
   return `<section style="break-inside:avoid;">
@@ -216,7 +221,7 @@ function render(resume) {
 <title>${esc(m.name)} · CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>${CSS}</style>
 </head>
 <body>
@@ -236,7 +241,7 @@ function render(resume) {
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 9px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--sec);">
         ${contactRow(m)}
       </div>
-      <p style="margin:13px 0 0; font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:13.5px; line-height:1.5; color:var(--sec); font-weight:400; text-wrap:pretty;">${esc(m.summary)}</p>
+      <p style="margin:13px 0 0; font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:13.5px; line-height:1.5; color:var(--sec); font-weight:400; text-wrap:pretty;">${rich(m.summary)}</p>
       <div style="height:1px; background:var(--rule); margin-top:13px;"></div>
     </header>
 

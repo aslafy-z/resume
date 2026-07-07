@@ -33,8 +33,8 @@
       "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
       "highlights": [
         "Delivered MVPs combining edge computing, content delivery and Kubernetes-based infrastructure.",
-        "Designed **Kubernetes foundations** for onboard application management, aircraft systems and rollout-constrained environments.",
-        "Built Varnish-based onboard video/content distribution and **Jetson/GPU real-time computer-vision pipelines**."
+        "Designed Kubernetes foundations for onboard application management, aircraft systems and rollout-constrained environments.",
+        "Built Varnish-based onboard video/content distribution and Jetson/GPU real-time computer-vision pipelines."
       ]
     },
     {
@@ -46,7 +46,7 @@
       "highlights": [
         "Led development of a **self-service Kubernetes platform product** and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
         "Developed a **Kubernetes compliance engine** for real-time security and best-practice visibility across developers, compliance teams and operators.",
-        "Delivered platform maintenance and enhancements for **10+ clients** using immutable infrastructure, GitOps workflows and modern security practices."
+        "Delivered platform maintenance and enhancements for 10+ clients using immutable infrastructure, GitOps workflows and modern security practices."
       ]
     },
     {
@@ -57,10 +57,10 @@
       "location": "Toulouse, France",
       "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
       "highlights": [
-        "Operated and modernized **10+ multi-cloud Kubernetes clusters** of up to 150 nodes each, serving **50 product teams**.",
+        "Operated and modernized 10+ Kubernetes clusters across multiple clouds, up to 200 nodes each, serving 50 product teams.",
         "Led **RKE to AKS migration** with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
         "Built self-service Kubernetes platform capabilities, resource-efficiency practices, PagerDuty workflows, runbooks and alert tuning.",
-        "Developed and contributed to **Kubernetes controllers/operators** for multi-tenancy, logging and platform automation."
+        "Developed and contributed to Kubernetes controllers/operators for multi-tenancy, logging and platform automation."
       ]
     },
     {

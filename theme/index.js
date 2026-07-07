@@ -220,7 +220,7 @@ function render(resume) {
 <title>${esc(m.name)} · CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>${CSS}</style>
 </head>
 <body>
@@ -240,7 +240,7 @@ function render(resume) {
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 9px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--sec);">
         ${contactRow(m)}
       </div>
-      <p style="margin:13px 0 0; font-family:'IBM Plex Serif',Georgia,serif; font-style:italic; font-size:13.5px; line-height:1.45; color:var(--sec); font-weight:300;">${esc(m.summary)}</p>
+      <p style="margin:13px 0 0; font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:13.5px; line-height:1.5; color:var(--sec); font-weight:400; text-wrap:pretty;">${esc(m.summary)}</p>
       <div style="height:1px; background:var(--rule); margin-top:13px;"></div>
     </header>
 

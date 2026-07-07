@@ -6,8 +6,8 @@ certifications, interests and languages in the sidebar.
 
 Design notes:
 
-- IBM Plex Serif for the name and summary, IBM Plex Sans for body text,
-  IBM Plex Mono for labels, dates and metadata.
+- IBM Plex Serif for the name, Source Serif 4 italic for the summary,
+  IBM Plex Sans for body text, IBM Plex Mono for labels, dates and metadata.
 - Dark mode by default, with a fixed toggle button switching to light mode.
 - On screen the sheet is zoomed to 150% for comfortable reading; print keeps the
   real A4 dimensions.

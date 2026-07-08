@@ -34,7 +34,7 @@ const CSS = `
   }
   @media (max-width: 560px) {
     #cv { --f36:29px; --f135:15.5px; --f12:14px; --f11:13.5px; --f10:13px; --f95:12px; --f9:11px; --f85:11px; padding: 0 !important; }
-    .cv-sheet { padding: 30px 22px 28px !important; }
+    .cv-sheet { padding: 56px 22px 28px !important; }
   }
   @media print {
     @page { size: A4; margin: 0; }

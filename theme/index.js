@@ -113,7 +113,7 @@ function buildModel(resume) {
       degree: [e.studyType, e.area].filter(Boolean).join(', '),
       period: ym(e.startDate) + ' — ' + ym(e.endDate),
     })),
-    certs: (r.certificates || []).map(c => ({ name: c.name || '', meta: [c.issuer, ym(c.date)].filter(Boolean).join(' · ') })),
+    certs: (r.certificates || []).map(c => ({ name: c.name || '', url: c.url || '', meta: [c.issuer, ym(c.date)].filter(Boolean).join(' · ') })),
     interests: (r.interests || []).map(i => ({ name: i.name || '', line: (i.keywords || []).join('  ·  ') })),
     languages: (r.languages || []).map(l => ({ language: l.language || '', fluency: l.fluency || '' })),
   };
@@ -198,10 +198,15 @@ function educationItems(education) {
 }
 
 function certItems(certs) {
-  return certs.map(c => `<div style="margin-bottom:6px;">
-            <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${esc(c.name)}</div>
+  return certs.map(c => {
+    const name = c.url
+      ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none;">${esc(c.name)}</a>`
+      : esc(c.name);
+    return `<div style="margin-bottom:6px;">
+            <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${name}</div>
             <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint); margin-top:1px;">${esc(c.meta)}</div>
-          </div>`).join('\n          ');
+          </div>`;
+  }).join('\n          ');
 }
 
 function interestItems(interests) {

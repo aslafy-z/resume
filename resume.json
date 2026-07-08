@@ -124,12 +124,14 @@
     {
       "name": "Certified Kubernetes Administrator (CKA)",
       "issuer": "The Linux Foundation",
-      "date": "2021-12"
+      "date": "2021-12",
+      "url": "https://go.zadkiel.fr/certificate/cka"
     },
     {
       "name": "Certified Kubernetes Security Specialist (CKS)",
       "issuer": "The Linux Foundation",
-      "date": "2023-02"
+      "date": "2023-02",
+      "url": "https://go.zadkiel.fr/certificate/cks"
     }
   ],
   "skills": [

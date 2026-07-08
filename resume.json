@@ -45,7 +45,7 @@
       "location": "Toulouse, France",
       "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center, across public and sovereign clouds.",
       "highlights": [
-        "Led development of a **self-service Kubernetes platform product** and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
+        "Led development of a **self-service Kubernetes platform product** that provisions clusters and a complete, batteries-included app ecosystem from declarative config across local, cloud and bare-metal, with layered Helm/Kustomize composition and automated SBOM/dependency discovery.",
         "Developed a **Kubernetes compliance engine** for real-time security and best-practice visibility across developers, compliance teams and operators.",
         "Delivering platform maintenance and enhancements across client environments using immutable infrastructure, GitOps workflows and modern security practices to 10+ client teams."
       ]

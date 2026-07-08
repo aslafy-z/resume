@@ -7,12 +7,12 @@ const CSS = `
   body { margin: 0; }
   @keyframes cvblink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
   .cv-cursor { animation: cvblink 1.15s step-end infinite; }
-  @media screen { .cv-sheet { zoom: 1.5; } }
   #cv strong { font-weight: 600; color: var(--em); }
   #cv {
     --bg: #e9e9e7; --sheet: #ffffff; --ink: #191919; --sec: #484848;
     --faint: #7a7a7a; --rule: #d8d8d5; --hair: #ebebe8; --em: #191919;
     --shadow: 0 1px 2px rgba(0,0,0,.05), 0 18px 50px rgba(0,0,0,.10);
+    --f36:36px; --f135:13.5px; --f12:12px; --f11:11px; --f10:10px; --f95:9.5px; --f9:9px; --f85:8.5px;
   }
   #cv[data-theme="dark"] {
     --bg: #0b0b0c; --sheet: #161617; --ink: #d6d6d6; --sec: #a8a8a8;
@@ -25,6 +25,16 @@ const CSS = `
       --faint: #6b6b6c; --rule: #2c2c2d; --hair: #242425; --em: #d6d6d6;
       --shadow: 0 0 0 1px #242425, 0 30px 70px rgba(0,0,0,.65);
     }
+  }
+  @media screen and (max-width: 720px) {
+    .cv-grid { grid-template-columns: 1fr !important; }
+    .cv-main { padding-right: 0 !important; }
+    .cv-aside { border-left: none !important; padding-left: 0 !important; border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 8px; }
+    .cv-sheet { min-height: 0 !important; }
+  }
+  @media (max-width: 560px) {
+    #cv { --f36:29px; --f135:15.5px; --f12:14px; --f11:13.5px; --f10:13px; --f95:12px; --f9:11px; --f85:11px; padding: 0 !important; }
+    .cv-sheet { padding: 30px 22px 28px !important; }
   }
   @media print {
     @page { size: A4; margin: 0; }
@@ -119,7 +129,7 @@ function buildModel(resume) {
   };
 }
 
-const SECTION_LABEL = "font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink);";
+const SECTION_LABEL = "font-family:'IBM Plex Mono',monospace; font-size:var(--f95); font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink);";
 
 const EXT_ARROW = '<span style="color:var(--faint); font-weight:400; font-size:0.85em;">&#8239;↗</span>';
 
@@ -144,12 +154,12 @@ function experienceSection(jobs) {
   if (!jobs.length) return '';
   const items = jobs.map(job => `<div style="margin-bottom:9px; break-inside:avoid;">
             <div style="display:flex; justify-content:space-between; align-items:baseline; gap:14px;">
-              <div style="font-size:12px; line-height:1.3;"><span style="font-weight:600; color:var(--ink);">${esc(job.role)}</span><span style="color:var(--faint);"> · </span><span style="color:var(--sec);">${esc(job.org)}</span></div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--faint); white-space:nowrap;">${esc(job.period)}</div>
+              <div style="font-size:var(--f12); line-height:1.3;"><span style="font-weight:600; color:var(--ink);">${esc(job.role)}</span><span style="color:var(--faint);"> · </span><span style="color:var(--sec);">${esc(job.org)}</span></div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f9); color:var(--faint); white-space:nowrap;">${esc(job.period)}</div>
             </div>
-            <div style="font-size:10px; color:var(--faint); margin-top:2px; line-height:1.4;">${rich(job.blurb)}</div>
+            <div style="font-size:var(--f10); color:var(--faint); margin-top:2px; line-height:1.4;">${rich(job.blurb)}</div>
             ${job.bullets.length ? `<ul style="margin:5px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:2px;">
-              ${job.bullets.map(b => `<li style="font-size:10px; line-height:1.45; color:var(--sec); display:flex; gap:8px;">
+              ${job.bullets.map(b => `<li style="font-size:var(--f10); line-height:1.45; color:var(--sec); display:flex; gap:8px;">
                 <span style="color:var(--faint); flex:none;">–</span><span>${rich(b)}</span>
               </li>`).join('\n              ')}
             </ul>` : ''}
@@ -164,11 +174,11 @@ function projectsSection(projects) {
   if (!projects.length) return '';
   const items = projects.map(p => `<div style="margin-bottom:7px; break-inside:avoid;">
             <div style="display:flex; justify-content:space-between; align-items:baseline; gap:14px;">
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.3;"><span style="color:var(--faint);">${esc(p.owner)}</span><span style="font-weight:500; color:var(--ink);">${esc(p.repo)}</span></div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint); white-space:nowrap;">${esc(p.role)}</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f11); line-height:1.3;"><span style="color:var(--faint);">${esc(p.owner)}</span><span style="font-weight:500; color:var(--ink);">${esc(p.repo)}</span></div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f85); letter-spacing:0.08em; text-transform:uppercase; color:var(--faint); white-space:nowrap;">${esc(p.role)}</div>
             </div>
-            <div style="font-size:10px; color:var(--sec); margin-top:3px; line-height:1.45;">${rich(p.description)}</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint); margin-top:3px; line-height:1.4; letter-spacing:0.02em;">${esc(p.keywordLine)}</div>
+            <div style="font-size:var(--f10); color:var(--sec); margin-top:3px; line-height:1.45;">${rich(p.description)}</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f85); color:var(--faint); margin-top:3px; line-height:1.4; letter-spacing:0.02em;">${esc(p.keywordLine)}</div>
           </div>`).join('\n          ');
   return `<section style="break-inside:avoid;">
           ${mainSectionHeader('Open Source', 9)}
@@ -186,16 +196,16 @@ function sidebarSection(title, marginBottom, itemsHtml) {
 
 function skillsItems(skills) {
   return skills.map(g => `<div style="margin-bottom:7px;">
-            <div style="font-size:9.5px; font-weight:600; color:var(--ink); margin-bottom:2px;">${esc(g.name)}</div>
-            <div style="font-size:9.5px; color:var(--sec); line-height:1.5;">${esc(g.line)}</div>
+            <div style="font-size:var(--f95); font-weight:600; color:var(--ink); margin-bottom:2px;">${esc(g.name)}</div>
+            <div style="font-size:var(--f95); color:var(--sec); line-height:1.5;">${esc(g.line)}</div>
           </div>`).join('\n          ');
 }
 
 function educationItems(education) {
   return education.map(e => `<div style="margin-bottom:6px;">
-            <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${esc(e.school)}</div>
-            <div style="font-size:9.5px; color:var(--sec); margin-top:1px; line-height:1.4;">${esc(e.degree)}</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint); margin-top:2px;">${esc(e.period)}</div>
+            <div style="font-size:var(--f10); font-weight:600; color:var(--ink); line-height:1.3;">${esc(e.school)}</div>
+            <div style="font-size:var(--f95); color:var(--sec); margin-top:1px; line-height:1.4;">${esc(e.degree)}</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f85); color:var(--faint); margin-top:2px;">${esc(e.period)}</div>
           </div>`).join('\n          ');
 }
 
@@ -205,22 +215,22 @@ function certItems(certs) {
       ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none;">${esc(c.name)}${EXT_ARROW}</a>`
       : esc(c.name);
     return `<div style="margin-bottom:6px;">
-            <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${name}</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint); margin-top:1px;">${esc(c.meta)}</div>
+            <div style="font-size:var(--f10); font-weight:600; color:var(--ink); line-height:1.3;">${name}</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:var(--f85); color:var(--faint); margin-top:1px;">${esc(c.meta)}</div>
           </div>`;
   }).join('\n          ');
 }
 
 function interestItems(interests) {
   return interests.map(i => `<div style="margin-bottom:6px;">
-            <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${esc(i.name)}</div>
-            <div style="font-size:9.5px; color:var(--sec); margin-top:1px; line-height:1.5;">${esc(i.line)}</div>
+            <div style="font-size:var(--f10); font-weight:600; color:var(--ink); line-height:1.3;">${esc(i.name)}</div>
+            <div style="font-size:var(--f95); color:var(--sec); margin-top:1px; line-height:1.5;">${esc(i.line)}</div>
           </div>`).join('\n          ');
 }
 
 function languageItems(languages) {
-  return languages.map(l => `<div style="display:flex; justify-content:space-between; align-items:baseline; font-size:10px; margin-bottom:4px;">
-            <span style="color:var(--ink);">${esc(l.language)}</span><span style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--faint);">${esc(l.fluency)}</span>
+  return languages.map(l => `<div style="display:flex; justify-content:space-between; align-items:baseline; font-size:var(--f10); margin-bottom:4px;">
+            <span style="color:var(--ink);">${esc(l.language)}</span><span style="font-family:'IBM Plex Mono',monospace; font-size:var(--f85); color:var(--faint);">${esc(l.fluency)}</span>
           </div>`).join('\n          ');
 }
 
@@ -242,31 +252,31 @@ function render(resume) {
 <div id="cv" style="min-height:100vh; background:var(--bg); font-family:'IBM Plex Sans',system-ui,sans-serif; color:var(--ink); padding:44px 20px; -webkit-font-smoothing:antialiased;">
 
   <div class="cv-noprint" style="position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px;">
-    <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
-    <button id="cv-print" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">print</button>
-    <button id="cv-theme-toggle" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">light</button>
+    <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
+    <button id="cv-print" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">print</button>
+    <button id="cv-theme-toggle" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">light</button>
   </div>
 
   <div class="cv-sheet" style="width:794px; max-width:100%; min-height:1123px; margin:0 auto; background:var(--sheet); box-shadow:var(--shadow); padding:36px 54px 28px;">
 
     <header>
-      <h1 style="margin:0; font-family:'IBM Plex Serif',Georgia,serif; font-size:36px; font-weight:400; letter-spacing:-0.015em; line-height:1.0; color:var(--ink);">${esc(m.name)}<span class="cv-cursor" style="display:inline-block; width:10px; height:0.8em; margin-left:8px; vertical-align:-1px; background:var(--ink);"></span></h1>
-      <div style="margin-top:7px; font-size:12px; font-weight:500; color:var(--sec);">${esc(m.titleMain)}</div>
-      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 9px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--sec);">
+      <h1 style="margin:0; font-family:'IBM Plex Serif',Georgia,serif; font-size:var(--f36); font-weight:400; letter-spacing:-0.015em; line-height:1.0; color:var(--ink);">${esc(m.name)}<span class="cv-cursor" style="display:inline-block; width:10px; height:0.8em; margin-left:8px; vertical-align:-1px; background:var(--ink);"></span></h1>
+      <div style="margin-top:7px; font-size:var(--f12); font-weight:500; color:var(--sec);">${esc(m.titleMain)}</div>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 9px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:var(--f95); color:var(--sec);">
         ${contactRow(m)}
       </div>
-      <p style="margin:13px 0 0; font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:13.5px; line-height:1.5; color:var(--sec); font-weight:400; text-wrap:pretty;">${rich(m.summary)}</p>
+      <p style="margin:13px 0 0; font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:var(--f135); line-height:1.5; color:var(--sec); font-weight:400; text-wrap:pretty;">${rich(m.summary)}</p>
       <div style="height:1px; background:var(--rule); margin-top:13px;"></div>
     </header>
 
-    <div style="display:grid; grid-template-columns:1fr 258px; gap:0; margin-top:12px; align-items:start;">
+    <div class="cv-grid" style="display:grid; grid-template-columns:1fr 258px; gap:0; margin-top:12px; align-items:start;">
 
-      <main style="padding-right:34px;">
+      <main class="cv-main" style="padding-right:34px;">
         ${experienceSection(m.experience)}
         ${projectsSection(m.projects)}
       </main>
 
-      <aside style="border-left:1px solid var(--rule); padding-left:32px; display:flex; flex-direction:column; gap:11px;">
+      <aside class="cv-aside" style="border-left:1px solid var(--rule); padding-left:32px; display:flex; flex-direction:column; gap:11px;">
         ${sidebarSection('Skills', 9, m.skills.length ? skillsItems(m.skills) : '')}
         ${sidebarSection('Education', 8, m.education.length ? educationItems(m.education) : '')}
         ${sidebarSection('Certifications', 8, m.certs.length ? certItems(m.certs) : '')}

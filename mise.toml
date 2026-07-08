@@ -14,12 +14,12 @@ node -e 'const fs = require("fs"); const { render } = require("./theme"); fs.wri
 '''
 
 [tasks.pdf]
-description = "Export resume.pdf from the rendered HTML (light palette, A4)"
+description = "Export Zadkiel_AHARONIAN_CV_EN.pdf from the rendered HTML (light palette, A4)"
 depends = ["html"]
 sources = ["index.html"]
-outputs = ["resume.pdf"]
+outputs = ["Zadkiel_AHARONIAN_CV_EN.pdf"]
 run = '''
-"${CHROME:-google-chrome-stable}" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=10000 --print-to-pdf=resume.pdf index.html
+"${CHROME:-google-chrome-stable}" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=10000 --print-to-pdf=Zadkiel_AHARONIAN_CV_EN.pdf index.html
 '''
 
 [tasks.serve]
@@ -33,4 +33,4 @@ run = "npx -y resumed validate resume.json"
 
 [tasks.clean]
 description = "Remove generated files"
-run = "rm -f index.html resume.pdf"
+run = "rm -f index.html Zadkiel_AHARONIAN_CV_EN.pdf"

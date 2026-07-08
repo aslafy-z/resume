@@ -6,7 +6,7 @@
     "email": "hello@zadkiel.fr",
     "phone": "+33 6 04 15 27 98",
     "url": "https://zadkiel.fr",
-    "summary": "Hands-on Kubernetes platform engineer and SRE with **10+ years of experience**, focused on self-service platforms, GitOps automation, edge/onboard systems, GPU/AI compute and reliable multi-cloud operations. Led a self-service Kubernetes platform product at CCL and internal platform modernization at Carrefour; **OSS maintainer** in the Kubernetes/Helm ecosystem, exploring agentic coding and AI-assisted platform workflows.",
+    "summary": "I'm a **developer** who builds and runs **platforms**, drawn to two problems: reliability you can sleep through, and platforms other engineers actually want to use. I've run Kubernetes at scale from public and sovereign clouds through on-prem to the edge, but I'm proudest of the open source I build and maintain, and the **1,000+ PRs I've merged upstream**. Right now I'm exploring how agentic AI changes the way platforms get built.",
     "location": {
       "city": "Toulouse",
       "countryCode": "FR"
@@ -32,9 +32,10 @@
       "location": "Toulouse, France",
       "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
       "highlights": [
-        "Delivered MVPs combining edge computing, content delivery and Kubernetes-based infrastructure.",
-        "Designed Kubernetes foundations for onboard application management, aircraft systems and rollout-constrained environments.",
-        "Built Varnish-based onboard video/content distribution and Jetson/GPU real-time computer-vision pipelines."
+        "Delivered 5+ MVPs for next-generation onboard platforms, from concept to production-ready.",
+        "Designed Kubernetes foundations for onboard application management and rollout-constrained environments.",
+        "Built Varnish-based onboard video/content distribution and **Jetson/GPU real-time computer-vision** pipelines.",
+        "Built an AWS landing zone (Control Tower, AFT) with self-service account vending, and designed its dev-to-prod security gates."
       ]
     },
     {
@@ -42,11 +43,11 @@
       "position": "DevOps Consultant",
       "startDate": "2019-04",
       "location": "Toulouse, France",
-      "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center.",
+      "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center, across public and sovereign clouds.",
       "highlights": [
         "Led development of a **self-service Kubernetes platform product** and Go-based CLI to bootstrap clusters and application stacks from declarative config, with GitOps delivery, layered Helm/Kustomize composition, secret hydration and repeatable local/cloud/bare-metal environments.",
         "Developed a **Kubernetes compliance engine** for real-time security and best-practice visibility across developers, compliance teams and operators.",
-        "Delivered platform maintenance and enhancements for 10+ clients using immutable infrastructure, GitOps workflows and modern security practices."
+        "Delivering platform maintenance and enhancements across client environments using immutable infrastructure, GitOps workflows and modern security practices to 10+ client teams."
       ]
     },
     {
@@ -54,12 +55,12 @@
       "position": "Site Reliability Engineer",
       "startDate": "2020-12",
       "endDate": "2024-05",
-      "location": "Toulouse, France",
+      "location": "Massy, France",
       "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
       "highlights": [
         "Operated and modernized 10+ Kubernetes clusters across multiple clouds, up to 200 nodes each, serving 50 product teams.",
-        "Led **RKE to AKS migration** with GitOps, immutable infrastructure, security guardrails and upgradeable platform baselines.",
-        "Built self-service Kubernetes platform capabilities, resource-efficiency practices, PagerDuty workflows, runbooks and alert tuning.",
+        "Led **RKE to AKS migration** with GitOps, immutable infrastructure and security guardrails, delivering high availability and zero-downtime cluster upgrades.",
+        "Built self-service Kubernetes platform capabilities, **GreenIT** resource-efficiency practices, runbooks, alert tuning and active on-call incident response.",
         "Developed and contributed to Kubernetes controllers/operators for multi-tenancy, logging and platform automation."
       ]
     },
@@ -80,7 +81,7 @@
         "Maintainer",
         "Contributor"
       ],
-      "description": "Maintainer: **aslafy-z/helm-git** (350+ stars), stakater/application, kube-logging/logging-operator; owner of aslafy-z/ctxdump. Contributor: Argo CD, Talos, Helm, Cilium, Kargo, Scaleway CCM, KServe, Renovate, Prometheus Operator, External Secrets, Pluto…",
+      "description": "Maintainer: **aslafy-z/helm-git** (350+ stars), **stakater/application**; core contributor to **kube-logging/logging-operator**. 1,000+ merged PRs across the ecosystem. Contributor: Argo CD, Cilium, Kyverno, Talos, Helm, Kargo, Scaleway CCM, Ansible, Renovate, Prometheus Operator, External Secrets, Pluto…",
       "keywords": [
         "Kubernetes",
         "Helm",
@@ -144,7 +145,8 @@
         "kubeadm",
         "Cluster API",
         "Rook/Ceph",
-        "Operators"
+        "Operators",
+        "Chaos engineering"
       ]
     },
     {
@@ -183,13 +185,12 @@
         "Ansible",
         "Packer",
         "Vault",
-        "SOPS/age",
+        "NVIDIA Jetson",
         "AWS",
         "Azure",
         "GCP",
         "Scaleway",
-        "Varnish",
-        "NVIDIA Jetson"
+        "OVHcloud"
       ]
     },
     {
@@ -216,6 +217,16 @@
         "C",
         "C++"
       ]
+    },
+    {
+      "name": "AI",
+      "keywords": [
+        "Computer vision",
+        "GPU compute",
+        "Agentic coding",
+        "AI-assisted workflows",
+        "Tokenmaxxing"
+      ]
     }
   ],
   "languages": [
@@ -230,20 +241,20 @@
   ],
   "interests": [
     {
-      "name": "AI / cloud workspaces",
+      "name": "Technology",
       "keywords": [
-        "Open-source tooling",
-        "Cloud workspaces",
-        "Agentic coding",
-        "AI workflows",
-        "Developer experience"
+        "IoT",
+        "Technology watch",
+        "Self-hosting",
+        "AI"
       ]
     },
     {
       "name": "Sports & outdoors",
       "keywords": [
         "Hiking",
-        "Rock climbing"
+        "Rock climbing",
+        "Cycling"
       ]
     },
     {

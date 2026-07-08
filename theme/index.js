@@ -121,6 +121,8 @@ function buildModel(resume) {
 
 const SECTION_LABEL = "font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink);";
 
+const EXT_ARROW = '<span style="color:var(--faint); font-weight:400; font-size:0.85em;">&#8239;↗</span>';
+
 function mainSectionHeader(title, marginBottom) {
   return `<div style="display:flex; align-items:baseline; gap:11px; margin-bottom:${marginBottom}px;">
     <span style="${SECTION_LABEL}">${esc(title)}</span>
@@ -133,8 +135,8 @@ function contactRow(m) {
   if (m.location) parts.push(`<span style="color:var(--faint);">${esc(m.location)}</span>`);
   if (m.email) parts.push(`<a href="${esc(m.emailHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.email)}</a>`);
   if (m.phone) parts.push(`<a href="${esc(m.telHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.phone)}</a>`);
-  if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}</a>`);
-  if (m.linkedinDisplay) parts.push(`<a href="${esc(m.linkedinUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.linkedinDisplay)}</a>`);
+  if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}${EXT_ARROW}</a>`);
+  if (m.linkedinDisplay) parts.push(`<a href="${esc(m.linkedinUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.linkedinDisplay)}${EXT_ARROW}</a>`);
   return parts.join('\n        <span style="color:var(--rule);">·</span>\n        ');
 }
 
@@ -200,7 +202,7 @@ function educationItems(education) {
 function certItems(certs) {
   return certs.map(c => {
     const name = c.url
-      ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none;">${esc(c.name)}</a>`
+      ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none;">${esc(c.name)}${EXT_ARROW}</a>`
       : esc(c.name);
     return `<div style="margin-bottom:6px;">
             <div style="font-size:10px; font-weight:600; color:var(--ink); line-height:1.3;">${name}</div>

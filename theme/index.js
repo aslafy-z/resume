@@ -36,6 +36,9 @@ const CSS = `
     #cv { --f36:29px; --f135:15.5px; --f12:14px; --f11:13.5px; --f10:13px; --f95:12px; --f9:11px; --f85:11px; padding: 0 !important; }
     .cv-sheet { padding: 56px 22px 28px !important; }
   }
+  @media screen and (min-width: 1280px) {
+    .cv-sheet { zoom: 1.5; }
+  }
   @media print {
     @page { size: A4; margin: 0; }
     #cv { --bg:#fff !important; --sheet:#fff !important; --ink:#141414 !important; --sec:#484848 !important;

@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Zadkiel AHARONIAN",
-    "label": "Platform Engineer · Developer Experience · Cloud Native OSS",
+    "label": "Developer · Platform Engineer · SRE · Open Source",
     "email": "hello@zadkiel.fr",
     "url": "https://zadkiel.fr",
     "summary": "I build **developer platforms** for teams that need reliable Kubernetes, GitOps and delivery, without turning product teams into platform experts. I've run **Kubernetes at scale** across public and sovereign clouds, on-prem and the edge. My work sits at the intersection of **Developer Experience**, reliability and open source, and I'm proudest of the OSS I maintain: **1,000+ merged upstream PRs**. Now exploring how agentic AI reshapes platform engineering.",
@@ -31,11 +31,11 @@
       "location": "Toulouse, France",
       "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
       "highlights": [
-        "Delivered 5+ MVPs for next-generation onboard platforms, from concept to production-ready.",
-        "Designed Kubernetes foundations for onboard application management and rollout-constrained environments.",
-        "Built a **Varnish**-powered video distribution system for onboard content delivery.",
-        "Enabled **real-time computer vision** at the edge on **Jetson** hardware with optimized pipelines.",
-        "Built an AWS landing zone (Control Tower, AFT) with self-service account vending, and designed its dev-to-prod security gates."
+        "Delivered **5+ MVPs** for next-generation onboard platforms, from concept to production-ready.",
+        "Designed **Kubernetes foundations** for onboard application management and rollout-constrained environments.",
+        "Built a Varnish-powered **onboard video distribution system** for content delivery.",
+        "Enabled **real-time computer vision** at the edge on Jetson/GPU hardware with optimized pipelines.",
+        "Built an AWS landing zone (Control Tower, AFT) with **self-service account vending**, and designed its dev-to-prod security gates."
       ]
     },
     {

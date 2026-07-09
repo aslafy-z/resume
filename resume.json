@@ -180,6 +180,7 @@
         "Argo Workflows",
         "Kargo",
         "Tekton",
+        "KEDA",
         "Renovate",
         "GitHub Actions",
         "GitLab CI",

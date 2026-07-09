@@ -114,6 +114,7 @@ function buildModel(resume) {
     name: b.name || '',
     titleMain: b.label || '',
     location: [loc.city, COUNTRIES[loc.countryCode] || loc.countryCode].filter(Boolean).join(', '),
+    remote: b.remote || '',
     email: b.email || '',
     emailHref: 'mailto:' + (b.email || ''),
     phone: b.phone || '',
@@ -157,6 +158,7 @@ function mainSectionHeader(title, marginBottom) {
 function contactRow(m) {
   const parts = [];
   if (m.location) parts.push(`<span style="color:var(--faint);">${esc(m.location)}</span>`);
+  if (m.remote) parts.push(`<span style="color:var(--faint);">${esc(m.remote)}</span>`);
   if (m.email) parts.push(`<a href="${esc(m.emailHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.email)}</a>`);
   if (m.phone) parts.push(`<a href="${esc(m.telHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.phone)}</a>`);
   if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}${EXT_ARROW}</a>`);

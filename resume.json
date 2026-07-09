@@ -10,6 +10,7 @@
       "city": "Toulouse",
       "countryCode": "FR"
     },
+    "remote": "Full remote",
     "profiles": [
       {
         "network": "GitHub",

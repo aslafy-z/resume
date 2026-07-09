@@ -5,7 +5,7 @@
     "label": "Developer · Platform Engineer · SRE · Open Source",
     "email": "hello@zadkiel.fr",
     "url": "https://zadkiel.fr",
-    "summary": "I build **developer platforms** for teams that need reliable Kubernetes, GitOps and delivery, without turning product teams into platform experts. I've run **Kubernetes at scale** across public and sovereign clouds, on-prem and the edge. My work sits at the intersection of **Developer Experience**, reliability and open source, and I'm proudest of the OSS I maintain: **1,000+ merged upstream PRs**. Now exploring how agentic AI reshapes platform engineering.",
+    "summary": "I build **developer platforms** for teams that need reliable Kubernetes, GitOps and delivery without turning product teams into platform experts. I have run **Kubernetes at scale** across public and sovereign clouds, on-prem and the edge. My work sits at the intersection of developer experience, reliability and open source, with **1,000+ merged upstream PRs**. I am now exploring how agentic AI reshapes platform engineering.",
     "location": {
       "city": "Toulouse",
       "countryCode": "FR"
@@ -179,7 +179,6 @@
         "Argo Rollouts",
         "Argo Workflows",
         "Kargo",
-        "Tekton",
         "KEDA",
         "Renovate",
         "GitHub Actions",
@@ -230,7 +229,6 @@
       "keywords": [
         "Cilium",
         "Calico",
-        "Canal",
         "Gateway API",
         "ingress-nginx",
         "Traefik",
@@ -247,7 +245,6 @@
         "Scaleway",
         "OVHcloud",
         "Terraform",
-        "Pulumi",
         "Crossplane",
         "Ansible",
         "Packer",

@@ -50,7 +50,9 @@ Beyond the standard schema fields, the theme applies a few conventions:
   markers as detached runs, which breaks `pdftotext` and ATS parsing.
 - Font sizes are tuned so the sheet lands exactly on one A4 page with the current
   content. Adding entries or keywords may require re-tuning them.
-- `basics.profiles` entries named `GitHub` and `LinkedIn` appear in the header contact line.
+- Every `basics.profiles` entry with a `network` and `username` appears in the header contact
+  line, in array order, rendered as `network/username` rather than as a full URL.
+- A non-standard `basics.remote` string renders next to the location.
 - `projects` render under "Open Source"; a `name` containing `/` is split into a dimmed
   owner prefix and a highlighted repository name, and `roles` are joined as a label.
 - `work` entries without an `endDate` display as "Present".

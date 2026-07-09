@@ -85,9 +85,6 @@ function ym(s) {
 function buildModel(resume) {
   const r = resume || {};
   const b = r.basics || {};
-  const prof = net => (b.profiles || []).find(p => (p.network || '').toLowerCase() === net) || {};
-  const gh = prof('github');
-  const li = prof('linkedin');
   const loc = b.location || {};
 
   const project = p => {
@@ -119,10 +116,11 @@ function buildModel(resume) {
     emailHref: 'mailto:' + (b.email || ''),
     phone: b.phone || '',
     telHref: 'tel:' + String(b.phone || '').replace(/\s/g, ''),
-    githubUrl: gh.url || '#',
-    githubDisplay: gh.username ? 'github.com/' + gh.username : '',
-    linkedinUrl: li.url || '#',
-    linkedinDisplay: li.username ? 'linkedin.com/in/' + li.username : '',
+    // Rendered as network/username, not a full URL: the contact row is width-bound
+    // and the domains cost more space than they convey.
+    profiles: (b.profiles || [])
+      .filter(p => p.network && p.username)
+      .map(p => ({ url: p.url || '#', display: p.network.toLowerCase() + '/' + p.username })),
     summary: b.summary || '',
     experience: (r.work || []).map(w => ({
       role: w.position || '',
@@ -161,8 +159,7 @@ function contactRow(m) {
   if (m.remote) parts.push(`<span style="color:var(--faint);">${esc(m.remote)}</span>`);
   if (m.email) parts.push(`<a href="${esc(m.emailHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.email)}</a>`);
   if (m.phone) parts.push(`<a href="${esc(m.telHref)}" style="color:var(--sec); text-decoration:none;">${esc(m.phone)}</a>`);
-  if (m.githubDisplay) parts.push(`<a href="${esc(m.githubUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.githubDisplay)}${EXT_ARROW}</a>`);
-  if (m.linkedinDisplay) parts.push(`<a href="${esc(m.linkedinUrl)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(m.linkedinDisplay)}${EXT_ARROW}</a>`);
+  m.profiles.forEach(p => parts.push(`<a href="${esc(p.url)}" target="_blank" rel="noopener" style="color:var(--sec); text-decoration:none;">${esc(p.display)}${EXT_ARROW}</a>`));
   return parts.join('\n        <span style="color:var(--rule);">·</span>\n        ');
 }
 

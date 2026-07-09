@@ -2,11 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Zadkiel AHARONIAN",
-    "label": "Developer · Platform & Reliability · Open Source",
+    "label": "Platform Engineer · Developer Experience · Cloud Native OSS",
     "email": "hello@zadkiel.fr",
-    "phone": "+33 6 04 15 27 98",
     "url": "https://zadkiel.fr",
-    "summary": "I'm a **developer** who builds and runs **platforms**, drawn to two problems: reliability you can sleep through, and platforms other engineers actually want to use. I've run Kubernetes at scale from public and sovereign clouds through on-prem to the edge, but I'm proudest of the open source I build and maintain, and the **1,000+ PRs I've merged upstream**. Right now I'm exploring how agentic AI changes the way platforms get built.",
+    "summary": "I build **developer platforms** for teams that need reliable Kubernetes, GitOps and delivery, without turning product teams into platform experts. I've run **Kubernetes at scale** across public and sovereign clouds, on-prem and the edge. My work sits at the intersection of **Developer Experience**, reliability and open source, and I'm proudest of the OSS I maintain: **1,000+ merged upstream PRs**. Now exploring how agentic AI reshapes platform engineering.",
     "location": {
       "city": "Toulouse",
       "countryCode": "FR"
@@ -34,7 +33,8 @@
       "highlights": [
         "Delivered 5+ MVPs for next-generation onboard platforms, from concept to production-ready.",
         "Designed Kubernetes foundations for onboard application management and rollout-constrained environments.",
-        "Built Varnish-based onboard video/content distribution and **Jetson/GPU real-time computer-vision** pipelines.",
+        "Built a **Varnish**-powered video distribution system for onboard content delivery.",
+        "Enabled **real-time computer vision** at the edge on **Jetson** hardware with optimized pipelines.",
         "Built an AWS landing zone (Control Tower, AFT) with self-service account vending, and designed its dev-to-prod security gates."
       ]
     },
@@ -43,7 +43,7 @@
       "position": "DevOps Consultant",
       "startDate": "2019-04",
       "location": "Toulouse, France",
-      "summary": "Kubernetes platform engineering and DevOps consulting in a multi-client service center, across public and sovereign clouds.",
+      "summary": "Kubernetes platform engineering and DevOps consulting across public and sovereign clouds.",
       "highlights": [
         "Led development of a **self-service Kubernetes platform product** that provisions clusters and a complete, batteries-included app ecosystem from declarative config across local, cloud and bare-metal, with layered Helm/Kustomize composition and automated SBOM/dependency discovery.",
         "Developed a **Kubernetes compliance engine** for real-time security and best-practice visibility across developers, compliance teams and operators.",
@@ -56,10 +56,10 @@
       "startDate": "2020-12",
       "endDate": "2024-05",
       "location": "Massy, France",
-      "summary": "Internal Kubernetes platform team for Carrefour product teams, operating shared clusters and platform services across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
+      "summary": "Internal Kubernetes platform team for Carrefour product teams, across GKE, Rancher RKE, Azure IaaS/Kubespray and AKS.",
       "highlights": [
         "Operated and modernized 10+ Kubernetes clusters across multiple clouds, up to 200 nodes each, serving 50 product teams.",
-        "Led **RKE to AKS migration** with GitOps, immutable infrastructure and security guardrails, delivering high availability and zero-downtime cluster upgrades.",
+        "Led Kubespray to RKE and **RKE to AKS migration** with GitOps, immutable infrastructure and security guardrails, delivering high availability and zero-downtime cluster upgrades.",
         "Built self-service Kubernetes platform capabilities, **GreenIT** resource-efficiency practices, runbooks, alert tuning and active on-call incident response.",
         "Developed and contributed to Kubernetes controllers/operators for multi-tenancy, logging and platform automation."
       ]
@@ -75,33 +75,44 @@
   ],
   "projects": [
     {
-      "name": "Selected Cloud Native OSS",
+      "name": "aslafy-z/helm-git",
+      "type": "open-source",
+      "url": "https://github.com/aslafy-z/helm-git",
+      "roles": [
+        "Maintainer"
+      ],
+      "description": "Helm plugin to install charts and values straight from Git repositories. **360+ stars**."
+    },
+    {
+      "name": "stakater/application",
+      "type": "open-source",
+      "url": "https://github.com/stakater/application",
+      "roles": [
+        "Maintainer"
+      ],
+      "description": "Generic production Helm chart with schema-validated values. **370+ stars**."
+    },
+    {
+      "name": "kube-logging/logging-operator",
+      "type": "open-source",
+      "url": "https://github.com/kube-logging/logging-operator",
+      "roles": [
+        "Core contributor"
+      ],
+      "description": "Operator-driven log collection, routing and delivery as declarative resources. **1,600+ stars**."
+    },
+    {
+      "name": "Ecosystem contributions",
       "type": "open-source",
       "roles": [
-        "Maintainer",
         "Contributor"
       ],
-      "description": "Maintainer: **aslafy-z/helm-git** (350+ stars), **stakater/application**; core contributor to **kube-logging/logging-operator**. 1,000+ merged PRs across the ecosystem. Contributor: Argo CD, Cilium, Kyverno, Talos, Helm, Kargo, Scaleway CCM, Ansible, Renovate, Prometheus Operator, External Secrets, Pluto…",
-      "keywords": [
-        "Kubernetes",
-        "Helm",
-        "Operators",
-        "GitOps",
-        "Logging",
-        "Networking"
-      ]
+      "description": "**1,000+ merged PRs**: Argo CD, Cilium, Kyverno, Talos, Helm, Kargo, Scaleway CCM, Ansible, Renovate, Prometheus Operator, External Secrets, Pluto…"
     },
     {
       "name": "Production-grade homelab",
       "type": "infrastructure",
-      "description": "Talos/Kubernetes GitOps lab used to validate real platform patterns: Cilium, KubeSpan, Rook/Ceph, SOPS/age, identity, observability and self-hosted services.",
-      "keywords": [
-        "Talos",
-        "GitOps",
-        "Cilium",
-        "Rook/Ceph",
-        "SOPS/age"
-      ]
+      "description": "Talos/Kubernetes GitOps lab validating platform patterns: Cilium, Rook/Ceph, SOPS/age, observability."
     }
   ],
   "education": [
@@ -136,7 +147,7 @@
   ],
   "skills": [
     {
-      "name": "Kubernetes / Platform",
+      "name": "Platform Engineering",
       "keywords": [
         "Kubernetes",
         "Talos",
@@ -145,67 +156,101 @@
         "EKS",
         "RKE",
         "kubeadm",
+        "Kubespray",
         "Cluster API",
-        "Rook/Ceph",
         "Operators",
+        "Rook/Ceph",
+        "Docker",
+        "containerd",
+        "Harbor",
         "Chaos engineering"
       ]
     },
     {
-      "name": "Policy / Networking / Identity",
+      "name": "Developer Experience",
       "keywords": [
-        "Cilium",
-        "Calico",
-        "Canal",
-        "OPA",
-        "Kyverno",
-        "Gateway API",
-        "ingress-nginx",
-        "Traefik",
-        "Envoy Gateway",
-        "Keycloak/OIDC"
-      ]
-    },
-    {
-      "name": "GitOps / Delivery",
-      "keywords": [
+        "Self-service platforms",
+        "Internal tooling",
         "Helm",
         "Kustomize",
+        "GitOps",
         "Argo CD",
         "Flux CD",
+        "Argo Rollouts",
         "Argo Workflows",
+        "Kargo",
+        "Tekton",
         "Renovate",
-        "GitLab CI",
         "GitHub Actions",
+        "GitLab CI",
         "Jenkins"
       ]
     },
     {
-      "name": "IaC / Cloud / Edge",
+      "name": "Observability / Reliability",
       "keywords": [
-        "Terraform",
-        "Ansible",
-        "Packer",
+        "Prometheus",
+        "Thanos",
+        "Mimir",
+        "VictoriaMetrics",
+        "Alertmanager",
+        "Grafana",
+        "Loki",
+        "Fluent Bit",
+        "Fluentd",
+        "OpenTelemetry",
+        "Tempo",
+        "Incident response",
+        "Alert tuning",
+        "Runbooks",
+        "Zero-downtime upgrades"
+      ]
+    },
+    {
+      "name": "Security / Supply chain",
+      "keywords": [
+        "Kyverno",
+        "OPA",
+        "Gatekeeper",
+        "Falco",
+        "Trivy",
+        "Syft/Grype",
+        "Cosign",
+        "SBOM",
         "Vault",
-        "NVIDIA Jetson",
+        "External Secrets",
+        "cert-manager",
+        "Keycloak/OIDC",
+        "Velero"
+      ]
+    },
+    {
+      "name": "Networking",
+      "keywords": [
+        "Cilium",
+        "Calico",
+        "Canal",
+        "Gateway API",
+        "ingress-nginx",
+        "Traefik",
+        "Envoy Gateway",
+        "WireGuard"
+      ]
+    },
+    {
+      "name": "Cloud / Edge / IaC",
+      "keywords": [
         "AWS",
         "Azure",
         "GCP",
         "Scaleway",
-        "OVHcloud"
-      ]
-    },
-    {
-      "name": "Observability",
-      "keywords": [
-        "Prometheus",
-        "VictoriaMetrics",
-        "Mimir",
-        "Thanos",
-        "Grafana",
-        "Loki",
-        "Fluent Bit",
-        "Fluentd"
+        "OVHcloud",
+        "Terraform",
+        "Pulumi",
+        "Crossplane",
+        "Ansible",
+        "Packer",
+        "NVIDIA Jetson"
       ]
     },
     {
@@ -216,18 +261,21 @@
         "TypeScript",
         "Shell",
         "Rust",
-        "C",
-        "C++"
+        "C/C++"
       ]
     },
     {
       "name": "AI",
       "keywords": [
+        "AI-assisted engineering",
+        "Agentic coding workflows",
+        "Developer automation",
+        "ChatOps",
+        "KServe",
+        "vLLM",
+        "LiteLLM",
         "Computer vision",
-        "GPU compute",
-        "Agentic coding",
-        "AI-assisted workflows",
-        "Tokenmaxxing"
+        "GPU compute"
       ]
     }
   ],
@@ -245,10 +293,11 @@
     {
       "name": "Technology",
       "keywords": [
-        "IoT",
         "Technology watch",
+        "IoT",
+        "AI",
         "Self-hosting",
-        "AI"
+        "Local-first"
       ]
     },
     {

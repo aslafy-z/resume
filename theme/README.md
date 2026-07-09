@@ -45,6 +45,11 @@ node -e "const fs=require('fs');const{render}=require('./theme');fs.writeFileSyn
 Beyond the standard schema fields, the theme applies a few conventions:
 
 - `basics.location.countryCode` is expanded to a country name for common codes.
+- Bullet dashes are inline text with a hanging indent rather than a pseudo-element or a
+  flex sibling, because Chromium's PDF text layer emits absolutely positioned and flex
+  markers as detached runs, which breaks `pdftotext` and ATS parsing.
+- Font sizes are tuned so the sheet lands exactly on one A4 page with the current
+  content. Adding entries or keywords may require re-tuning them.
 - `basics.profiles` entries named `GitHub` and `LinkedIn` appear in the header contact line.
 - `projects` render under "Open Source"; a `name` containing `/` is split into a dimmed
   owner prefix and a highlighted repository name, and `roles` are joined as a label.

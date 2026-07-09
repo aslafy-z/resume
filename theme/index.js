@@ -85,7 +85,6 @@ function ym(s) {
 function buildModel(resume) {
   const r = resume || {};
   const b = r.basics || {};
-  const labelParts = String(b.label || '').split(/\s+[-–—]\s+/);
   const prof = net => (b.profiles || []).find(p => (p.network || '').toLowerCase() === net) || {};
   const gh = prof('github');
   const li = prof('linkedin');
@@ -113,7 +112,7 @@ function buildModel(resume) {
 
   return {
     name: b.name || '',
-    titleMain: labelParts[0] || '',
+    titleMain: b.label || '',
     location: [loc.city, COUNTRIES[loc.countryCode] || loc.countryCode].filter(Boolean).join(', '),
     email: b.email || '',
     emailHref: 'mailto:' + (b.email || ''),

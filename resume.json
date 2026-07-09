@@ -38,10 +38,10 @@
       "summary": "Cloud-native and edge platforms for next-generation onboard aircraft systems.",
       "highlights": [
         "Delivered **5+ MVPs** for next-generation onboard platforms, from concept to production-ready.",
-        "Designed **Kubernetes foundations** for onboard application management and rollout-constrained environments.",
-        "Built a Varnish-powered **onboard video distribution system** for content delivery.",
+        "Designed Kubernetes foundations for onboard application management and rollout-constrained environments.",
+        "Built a Varnish-powered **content distribution system** for onboard entertainment.",
         "Enabled **real-time computer vision** at the edge on Jetson/GPU hardware with optimized pipelines.",
-        "Built an AWS landing zone (Control Tower, AFT) with **self-service account vending**, and designed its dev-to-prod security gates."
+        "Built an AWS landing zone with self-service account vending, and designed its dev-to-prod security gates."
       ]
     },
     {

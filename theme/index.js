@@ -322,7 +322,29 @@ function render(resume) {
     syncLabel();
   }
   if (print) {
-    print.addEventListener('click', function () { window.print(); });
+    print.addEventListener('click', function () {
+      var pdfUrl = './Zadkiel_AHARONIAN_CV_EN.pdf';
+      var frame = document.getElementById('cv-print-pdf-frame');
+      if (!frame) {
+        frame = document.createElement('iframe');
+        frame.id = 'cv-print-pdf-frame';
+        frame.title = 'Printable PDF';
+        frame.style.position = 'fixed';
+        frame.style.right = '0';
+        frame.style.bottom = '0';
+        frame.style.width = '0';
+        frame.style.height = '0';
+        frame.style.border = '0';
+        document.body.appendChild(frame);
+      }
+      frame.onload = function () {
+        if (frame.contentWindow) {
+          frame.contentWindow.focus();
+          frame.contentWindow.print();
+        }
+      };
+      frame.src = pdfUrl;
+    });
   }
 })();
 </script>

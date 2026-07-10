@@ -268,7 +268,7 @@ function render(resume) {
 
   <div class="cv-noprint" style="position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px;">
     <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
-    <button id="cv-print" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">print</button>
+    <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" target="_blank" rel="noopener" aria-label="Open the printable PDF" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">print</a>
     <button id="cv-theme-toggle" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">light</button>
   </div>
 
@@ -305,7 +305,6 @@ function render(resume) {
 (function () {
   var cv = document.getElementById('cv');
   var btn = document.getElementById('cv-theme-toggle');
-  var print = document.getElementById('cv-print');
   var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   function effective() {
     return cv.getAttribute('data-theme') || (mq && mq.matches ? 'dark' : 'light');
@@ -320,31 +319,6 @@ function render(resume) {
     });
     if (mq && mq.addEventListener) mq.addEventListener('change', syncLabel);
     syncLabel();
-  }
-  if (print) {
-    print.addEventListener('click', function () {
-      var pdfUrl = './Zadkiel_AHARONIAN_CV_EN.pdf';
-      var frame = document.getElementById('cv-print-pdf-frame');
-      if (!frame) {
-        frame = document.createElement('iframe');
-        frame.id = 'cv-print-pdf-frame';
-        frame.title = 'Printable PDF';
-        frame.style.position = 'fixed';
-        frame.style.right = '0';
-        frame.style.bottom = '0';
-        frame.style.width = '0';
-        frame.style.height = '0';
-        frame.style.border = '0';
-        document.body.appendChild(frame);
-      }
-      frame.onload = function () {
-        if (frame.contentWindow) {
-          frame.contentWindow.focus();
-          frame.contentWindow.print();
-        }
-      };
-      frame.src = pdfUrl;
-    });
   }
 })();
 </script>

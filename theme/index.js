@@ -54,6 +54,10 @@ const CSS = `
   }
   @media print {
     @page { size: A4; margin: 0; }
+    /* The cursor and hairline rules are drawn with CSS backgrounds; browsers skip
+       backgrounds when printing unless forced, which made print diverge from the
+       headless-Chrome PDF. print-color-adjust inherits, so #cv covers everything. */
+    #cv { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     #cv { --bg:#fff !important; --sheet:#fff !important; --ink:#141414 !important; --sec:#484848 !important;
       --faint:#7a7a7a !important; --rule:#ccccca !important; --hair:#e3e3e0 !important; --em:#141414 !important; --shadow:none !important;
       padding:0 !important; min-height:0 !important; }
@@ -267,7 +271,7 @@ function render(resume) {
 <div id="cv" style="min-height:100vh; background:var(--bg); font-family:'IBM Plex Sans',system-ui,sans-serif; color:var(--ink); padding:44px 20px; -webkit-font-smoothing:antialiased;">
 
   <div class="cv-noprint" style="position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px;">
-    <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
+    <a href="./Zadkiel_AHARONIAN_CV_EN.pdf" download="Zadkiel_AHARONIAN_CV_EN.pdf" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer; text-decoration:none;">pdf</a>
     <button id="cv-print" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">print</button>
     <button id="cv-theme-toggle" type="button" style="font-family:'IBM Plex Mono',monospace; font-size:var(--f10); letter-spacing:0.08em; text-transform:uppercase; color:var(--sec); background:var(--sheet); border:1px solid var(--rule); border-radius:999px; padding:6px 13px; cursor:pointer;">light</button>
   </div>

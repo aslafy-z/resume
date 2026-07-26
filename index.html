@@ -66,7 +66,10 @@
     #cv { --bg:#fff !important; --sheet:#fff !important; --ink:#141414 !important; --sec:#484848 !important;
       --faint:#7a7a7a !important; --rule:#ccccca !important; --hair:#e3e3e0 !important; --em:#141414 !important; --shadow:none !important;
       padding:0 !important; min-height:0 !important; }
-    .cv-sheet { box-shadow:none !important; margin:0 auto !important; }
+    /* A4 is 1122.5px tall at 96dpi, so the sheet's 1123px min-height overflows the
+       page by half a pixel and spills a blank second page in browser print. Content
+       alone fits; let it set the height. */
+    .cv-sheet { box-shadow:none !important; margin:0 auto !important; min-height:0 !important; }
     .cv-noprint { display:none !important; }
     .cv-cursor { animation:none !important; opacity:1 !important; }
   }

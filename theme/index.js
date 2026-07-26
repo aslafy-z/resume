@@ -66,6 +66,9 @@ const CSS = `
        alone fits; let it set the height. */
     .cv-sheet { box-shadow:none !important; margin:0 auto !important; min-height:0 !important; }
     .cv-noprint { display:none !important; }
+    /* Third-party scripts (e.g. the Vercel toolbar) inject widgets into <body>;
+       nothing outside the sheet belongs on paper. */
+    body > :not(#cv) { display:none !important; }
     .cv-cursor { animation:none !important; opacity:1 !important; }
   }
 `;
